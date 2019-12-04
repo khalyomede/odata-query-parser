@@ -1,0 +1,7 @@
+/vendor/
+coverage
+.vscode
+bin
+mutation
+.phpunit.result.cache
+infection.log

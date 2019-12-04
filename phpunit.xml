@@ -1,0 +1,14 @@
+<phpunit>
+	<testsuites>
+  		<testsuite name="OdataQueryParser parse">
+			<directory>src</directory>
+			<file>test/OdataQueryParser/parse/count.php</file>
+			<file>test/OdataQueryParser/parse/filter.php</file>
+			<file>test/OdataQueryParser/parse/order-by.php</file>
+			<file>test/OdataQueryParser/parse/select.php</file>
+			<file>test/OdataQueryParser/parse/skip.php</file>
+			<file>test/OdataQueryParser/parse/top.php</file>
+			<file>test/OdataQueryParser/parse.php</file>
+  		</testsuite>
+	</testsuites>
+</phpunit>
