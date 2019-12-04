@@ -2,6 +2,8 @@
 
 Parse OData v4 query strings.
 
+[![Packagist Version](https://img.shields.io/packagist/v/khalyomede/odata-query-parser)](https://packagist.org/packages/khalyomede/odata-query-parser) [![Packagist](https://img.shields.io/packagist/l/khalyomede/odata-query-parser)](https://github.com/khalyomede/odata-query-parser/blob/master/LICENSE) [![PHP from Packagist](https://img.shields.io/packagist/php-v/khalyomede/odata-query-parser)](https://github.com/khalyomede/odata-query-parser/blob/master/composer.json#L14) [![Build Status](https://travis-ci.com/khalyomede/odata-query-parser.svg?branch=master)](https://travis-ci.com/khalyomede/odata-query-parser) [![Maintainability](https://api.codeclimate.com/v1/badges/1ca8f176fedec7db81a2/maintainability)](https://codeclimate.com/github/khalyomede/odata-query-parser/maintainability) [![Known Vulnerabilities](https://snyk.io/test/github/khalyomede/odata-query-parser/badge.svg?targetFile=composer.lock)](https://snyk.io/test/github/khalyomede/odata-query-parser?targetFile=composer.lock)
+
 ## Summary
 
 - [About](#about)
