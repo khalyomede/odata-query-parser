@@ -1,4 +1,7 @@
 language: php
 php:
   - 7.4
-script: composer run test
+script:
+  - composer install
+  - composer run test
+  - composer run mutate
