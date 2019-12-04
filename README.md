@@ -47,11 +47,11 @@ If you inspect `$data`, this is what you will get:
 
 ```php
 [
-	"select" => [
-		"id",
-		"name",
-		"age"
-	]
+  "select" => [
+    "id",
+    "name",
+    "age"
+  ]
 ]
 ```
 
@@ -69,10 +69,10 @@ If you inspect `$data`, this is what you will get:
 
 ```php
 [
-	"select" => [
-		"id",
-		"name",
-		"age"
-	]
+  "select" => [
+    "id",
+    "name",
+    "age"
+  ]
 ]
 ```
