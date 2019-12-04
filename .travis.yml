@@ -1,4 +1,4 @@
 language: php
 php:
-	- 7.4
+  - 7.4
 script: composer run test
