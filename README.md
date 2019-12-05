@@ -65,7 +65,7 @@ In this example, we will use a unique feature of this library: to be able to not
 ```php
 use Khalyomede/OdataQueryParser;
 
-$data = OdataQueryParser::parse("http://example.com/api/user?select=id,name,age");
+$data = OdataQueryParser::parse("http://example.com/api/user?select=id,name,age", $withDollar = false);
 ```
 
 If you inspect `$data`, this is what you will get:
