@@ -10,6 +10,7 @@ Parse OData v4 query strings.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Examples](#examples)
+- [Known issues](#known-issues)
 
 ## About
 
@@ -78,3 +79,7 @@ If you inspect `$data`, this is what you will get:
   ]
 ]
 ```
+
+## Known issues
+
+- `$filter` command will not parse `or` and functions (like `contains()` of `substringof`), because I did not focused on this for the moment (the parser for `$filter` is too simplist, I should find a way to create an AST).
