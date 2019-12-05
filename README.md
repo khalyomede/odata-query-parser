@@ -10,6 +10,7 @@ Parse OData v4 query strings.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Examples](#examples)
+- [API](#api)
 - [Known issues](#known-issues)
 
 ## About
@@ -79,6 +80,55 @@ If you inspect `$data`, this is what you will get:
   ]
 ]
 ```
+
+## API
+
+```php
+OdataQueryParser::parse(string $url, bool $withDollar = true): array;
+```
+
+**parameters**
+
+- string `$url`: The URL to parse the query strings from. It should be a "complete" or "full" URL, which means that `http://example.com` will pass while `example.com` will not pass
+- bool `$withDollar`: Set it to false if you want to parse query strings without having to add the `$` signs before each keys.
+
+**returns**
+
+An associative array:
+
+```php
+return = [
+	string? "select" => array<string>,
+	string? "count" => bool,
+	string? "top" => int,
+	string? "skip" => int,
+	string? "orderBy" => array<OrderBy>,
+	string? "filter" => array<Filter>
+];
+
+OrderBy = [
+	string "property" => string,
+	string "direction" => Direction
+]
+
+Direction = "asc" | "desc"
+
+Filter = [
+	string "left" => string,
+	string "operator" => string,
+	string "right" => mixed
+]
+```
+
+**throws**
+
+- `InvalidArgumentException`
+  - If the parameter `$url` is not a valid URL (see the parameter description to know what is a valid URL)
+  - If the `$top` query string value is not an integer
+  - If the `$top` query string value is lower than 0
+  - If the `$skip` query string value is not an integer
+  - If the `$skip` query string value is lower than 0
+  - If the direction of the `$orderby` query string value is neither `asc` or `desc`
 
 ## Known issues
 
