@@ -7,6 +7,7 @@ Parse OData v4 query strings.
 ## Summary
 
 - [About](#about)
+- [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Examples](#examples)
@@ -18,6 +19,13 @@ Parse OData v4 query strings.
 I needed to only parse query strings to convert OData v4 commands into an understandable array that I could use to make a Laravel package to offer a way to automatically use Eloquent to filter the response according to this parsed array of OData v4 command.
 
 As I did not see a package exclusively dealing with parsing the query strings, and saw that [some people worked on their own without open sourcing it](https://stackoverflow.com/questions/14145604/parse-odata-query-uri-into-php-array), I decided I would start one myself.
+
+## Features
+
+- Parses an URL and returns an array
+- Supports `$select`, `$top`, `$skip`, `$orderby`, `$count`
+- Partial support for `$filter` (see [Known issues](#known-issues) section)
+- You can use a parse mode that let you parse these keywords without prepending `$`
 
 ## Requirements
 
