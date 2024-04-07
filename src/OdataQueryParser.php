@@ -6,7 +6,6 @@ namespace Khalyomede;
 
 use RuntimeException;
 use InvalidArgumentException;
-use League\Uri\Parser\QueryString;
 
 class OdataQueryParser {
 	const COUNT_KEY = "count";
