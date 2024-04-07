@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Khalyomede;
 
-use RuntimeException;
 use InvalidArgumentException;
 
 class OdataQueryParser {
