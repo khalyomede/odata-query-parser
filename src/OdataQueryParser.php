@@ -16,60 +16,27 @@ class OdataQueryParser {
 	const SKIP_KEY = "skip";
 	const TOP_KEY = "top";
 
-	/**
-	 * @var string
-	 */
-	private static $url = "";
+	private static string $url = "";
 
-	/**
-	 * @var string
-	 */
-	private static $queryString = "";
+	private static string $queryString = "";
 
-	/**
-	 * @var array
-	 */
-	private static $queryStrings = [];
+	private static array $queryStrings = [];
 
-	/**
-	 * @var bool
-	 */
-	private static $withDollar = false;
+	private static bool $withDollar = false;
 
-	/**
-	 * @var string
-	 */
-	private static $selectKey = "";
+	private static string $selectKey = "";
 
-	/**
-	 * @var string
-	 */
-	private static $countKey = "";
+	private static string $countKey = "";
 
-	/**
-	 * @var string
-	 */
-	private static $filterKey = "";
+	private static string $filterKey = "";
 
-	/**
-	 * @var string
-	 */
-	private static $formatKey = "";
+	private static string $formatKey = "";
 
-	/**
-	 * @var string
-	 */
-	private static $orderByKey = "";
+	private static string $orderByKey = "";
 
-	/**
-	 * @var string
-	 */
-	private static $skipKey = "";
+	private static string $skipKey = "";
 
-	/**
-	 * @var string
-	 */
-	private static $topKey = "";	
+	private static string $topKey = "";
 
 	public static function parse(string $url, bool $withDollar = true): array {
 		$output = [];
@@ -320,7 +287,7 @@ class OdataQueryParser {
 		}
 	}
 
-	private static function getFilterRightValue(string $operator, string $value) {
+	private static function getFilterRightValue(string $operator, string $value): int|float|string|array {
 		if ($operator !== "in") {
 			if (is_numeric($value)) {
 				if ((int) $value != $value) {

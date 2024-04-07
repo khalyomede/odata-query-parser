@@ -74,49 +74,49 @@ final class OrderByTest extends TestCase {
 	// orderBy (no dollar mode)
 	public function testShouldReturnThePropertyInTheOrderByInNonDollarMode(): void {
 		$expected = ["orderBy" => [["property" => "foo", "direction" => "asc"]]];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=foo', $includeDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=foo', false);
 
 		$this->assertEquals($expected, $actual);
 	}
 
 	public function testShouldReturnThePropertyInTheOrderByInNonDollarModeEvenIfFilledWithSpaces(): void {
 		$expected = ["orderBy" => [["property" => "foo", "direction" => "asc"]]];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=%20foo%20', $includeDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=%20foo%20', false);
 
 		$this->assertEquals($expected, $actual);
 	}
 
 	public function testShouldReturnAnEmptyArrayIfOrderByIsEmptyInNonDollarMode(): void {
 		$expected = [];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=', $includeDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=', false);
 
 		$this->assertEquals($expected, $actual);
 	}
 
 	public function testShouldReturnOrderByPropertyInAscDirectionIfSpecifiedInNonDollarMode(): void {
 		$expected = ["orderBy" => [["property" => "foo", "direction" => "asc"]]];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=foo%20asc', $includeDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=foo%20asc', false);
 
 		$this->assertEquals($expected, $actual);
 	}
 
 	public function testShouldReturnOrderByPropertyInAscDirectionIfSpecifiedInNonDollarModeEvenIfFilledWithSpaces(): void {
 		$expected = ["orderBy" => [["property" => "foo", "direction" => "asc"]]];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=%20foo%20%20%20asc%20', $includeDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=%20foo%20%20%20asc%20', false);
 
 		$this->assertEquals($expected, $actual);
 	}
 
 	public function testShouldReturnThePropertyInDescDirectionIfSpecifiedInNonDollarMode(): void {
 		$expected = ["orderBy" => [["property" => "foo", "direction" => "desc"]]];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=foo%20desc', $includeDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=foo%20desc', false);
 
 		$this->assertEquals($expected, $actual);
 	}
 
 	public function testShouldReturnThePropertyInDescDirectionIfSpecifiedInNonDollarModeEvenIfFilledWithSpaces(): void {
 		$expected = ["orderBy" => [["property" => "foo", "direction" => "desc"]]];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=%20foo%20%20%20desc%20', $includeDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?orderby=%20foo%20%20%20desc%20', false);
 
 		$this->assertEquals($expected, $actual);
 	}
@@ -125,7 +125,7 @@ final class OrderByTest extends TestCase {
 		$this->expectException(InvalidArgumentException::class);
 		$this->expectExceptionMessage("direction should be either asc or desc");
 
-		OdataQueryParser::parse('http://example.com/api/user?orderby=foo%20ascendant', $includeDollar = false);
+		OdataQueryParser::parse('http://example.com/api/user?orderby=foo%20ascendant', false);
 	}
 
 	public function testShouldReturnMultipleValues(): void {

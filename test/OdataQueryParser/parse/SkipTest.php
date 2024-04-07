@@ -55,26 +55,26 @@ final class SkipTest extends TestCase {
 		$this->expectException(InvalidArgumentException::class);
 		$this->expectExceptionMessage("skip should be greater or equal to zero");
 
-		OdataQueryParser::parse('http://example.com/?skip=-1', $includeDollar = false);
+		OdataQueryParser::parse('http://example.com/?skip=-1', false);
 	}
 
 	public function testShouldThrowAnInvalidArgumentExceptionIfSkipIsNotAnIntegerInNonDollarMode(): void {
 		$this->expectException(InvalidArgumentException::class);
 		$this->expectExceptionMessage("skip should be an integer");
 
-		OdataQueryParser::parse('http://example.com/?skip=test', $includeDollar = false);
+		OdataQueryParser::parse('http://example.com/?skip=test', false);
 	}
 
 	public function testShouldContainTheSkipValueIfProvidedInQueryParametersInNonDollarMode(): void {
 		$expected = ["skip" => 42];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?skip=42', $includeDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?skip=42', false);
 
 		$this->assertEquals($expected, $actual);
 	}
 
 	public function testShouldContainTheSkipValueIfProvidedInTheQueryParameterAndFilledWithSpacesInNonDollarMode(): void {
 		$expected = ["skip" => 42];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?skip=%2042%20', $withDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?skip=%2042%20', false);
 
 		$this->assertEquals($expected, $actual);
 	}
@@ -83,6 +83,6 @@ final class SkipTest extends TestCase {
 		$this->expectException(InvalidArgumentException::class);
 		$this->expectExceptionMessage("skip should be an integer");
 		
-		OdataQueryParser::parse('http://example.com/api/user?skip=', $includeDollar = false);
+		OdataQueryParser::parse('http://example.com/api/user?skip=', false);
 	}
 }

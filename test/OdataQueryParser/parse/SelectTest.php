@@ -20,14 +20,14 @@ final class SelectTest extends TestCase {
 	
 	public function testShouldReturnTheColumnsInNonDollarMode(): void {
 		$expected = ["select" => ["name", "type", "userId"]];
-		$actual = OdataQueryParser::parse('http://example.com/?select=name,type,userId', $includeDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/?select=name,type,userId', false);
 
 		$this->assertEquals($expected, $actual);
 	}
 
 	public function testShouldReturnTheColumnsIfFilledWithSpacesInNonDollarMode(): void {
 		$expected = ["select" => ["name", "type", "userId"]];
-		$actual = OdataQueryParser::parse('http://example.com/api/user?select=%20name,%20type%20,userId%20', $withDollar = false);
+		$actual = OdataQueryParser::parse('http://example.com/api/user?select=%20name,%20type%20,userId%20', false);
 
 		$this->assertEquals($expected, $actual);
 	}
