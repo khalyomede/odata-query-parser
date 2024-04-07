@@ -29,7 +29,7 @@ As I did not see a package exclusively dealing with parsing the query strings, a
 
 ## Requirements
 
-- PHP >= 7.2.0
+- PHP >= 8.1.0
 - [Composer](https://getcomposer.org/)
 
 ## Installation
@@ -52,7 +52,7 @@ In this example, we will use the `$select` OData query string command to filter 
 ```php
 use Khalyomede\OdataQueryParser;
 
-$data = OdataQueryParser::parse('http://example.com/api/user?$select=id,name,age');
+$data = OdataQueryParser::parse('https://example.com/api/user?$select=id,name,age');
 ```
 
 If you inspect `$data`, this is what you will get:
@@ -74,7 +74,7 @@ In this example, we will use a unique feature of this library: to be able to not
 ```php
 use Khalyomede/OdataQueryParser;
 
-$data = OdataQueryParser::parse("http://example.com/api/user?select=id,name,age", $withDollar = false);
+$data = OdataQueryParser::parse("https://example.com/api/user?select=id,name,age", $withDollar = false);
 ```
 
 If you inspect `$data`, this is what you will get:
@@ -97,8 +97,8 @@ OdataQueryParser::parse(string $url, bool $withDollar = true): array;
 
 **parameters**
 
-- string `$url`: The URL to parse the query strings from. It should be a "complete" or "full" URL, which means that `http://example.com` will pass while `example.com` will not pass
-- bool `$withDollar`: Set it to false if you want to parse query strings without having to add the `$` signs before each keys.
+- string `$url`: The URL to parse the query strings from. It should be a "complete" or "full" URL, which means that `https://example.com` will pass while `example.com` will not pass
+- bool `$withDollar`: Set it to false if you want to parse query strings without having to add the `$` signs before each key.
 
 **returns**
 
@@ -140,4 +140,4 @@ Filter = [
 
 ## Known issues
 
-- `$filter` command will not parse `or` and functions (like `contains()` of `substringof`), because I did not focused on this for the moment (the parser for `$filter` is too simplist, I should find a way to create an AST).
+- `$filter` command will not parse `or` and functions (like `contains()` of `substringof`), because I did not focus on this for the moment (the parser for `$filter` is too simplistic, I should find a way to create an AST).

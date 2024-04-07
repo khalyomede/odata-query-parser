@@ -20,7 +20,7 @@ final class ParseTest extends TestCase {
 
 	public function testShouldReturnAnEmptyArrayIfNoQueryParameters(): void {
 		$expected = [];
-		$actual = OdataQueryParser::parse("http://example.com");
+		$actual = OdataQueryParser::parse("https://example.com");
 
 		$this->assertEquals($expected, $actual);
 	}
