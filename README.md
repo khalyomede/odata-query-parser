@@ -1,3 +1,7 @@
+# Unmaintained notice
+
+Be aware I am not longer able to provide updates regularily. Please check this repository for a more up-to-date version: [https://github.com/Globy-App/odata-query-parser](https://github.com/Globy-App/odata-query-parser).
+
 # odata-query-parser
 
 Parse OData v4 query strings.
